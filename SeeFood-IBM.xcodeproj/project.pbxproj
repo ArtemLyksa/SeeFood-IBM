@@ -12,7 +12,26 @@
 		FEA4F06C232A487B0006C610 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEA4F06A232A487B0006C610 /* Main.storyboard */; };
 		FEA4F06E232A487C0006C610 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEA4F06D232A487C0006C610 /* Assets.xcassets */; };
 		FEA4F071232A487C0006C610 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEA4F06F232A487C0006C610 /* LaunchScreen.storyboard */; };
+		FEA4F07A232A4FBA0006C610 /* VisualRecognitionV3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEA4F078232A4FBA0006C610 /* VisualRecognitionV3.framework */; };
+		FEA4F07B232A4FBA0006C610 /* VisualRecognitionV3.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FEA4F078232A4FBA0006C610 /* VisualRecognitionV3.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FEA4F07C232A4FBA0006C610 /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEA4F079232A4FBA0006C610 /* SVProgressHUD.framework */; };
+		FEA4F07D232A4FBA0006C610 /* SVProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FEA4F079232A4FBA0006C610 /* SVProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FEA4F07E232A4FBA0006C610 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FEA4F07D232A4FBA0006C610 /* SVProgressHUD.framework in Embed Frameworks */,
+				FEA4F07B232A4FBA0006C610 /* VisualRecognitionV3.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		FEA4F063232A487B0006C610 /* SeeFood-IBM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SeeFood-IBM.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -22,6 +41,8 @@
 		FEA4F06D232A487C0006C610 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FEA4F070232A487C0006C610 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FEA4F072232A487C0006C610 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FEA4F078232A4FBA0006C610 /* VisualRecognitionV3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VisualRecognitionV3.framework; path = Carthage/Build/iOS/VisualRecognitionV3.framework; sourceTree = "<group>"; };
+		FEA4F079232A4FBA0006C610 /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +50,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEA4F07C232A4FBA0006C610 /* SVProgressHUD.framework in Frameworks */,
+				FEA4F07A232A4FBA0006C610 /* VisualRecognitionV3.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +61,8 @@
 		FEA4F05A232A487B0006C610 = {
 			isa = PBXGroup;
 			children = (
+				FEA4F079232A4FBA0006C610 /* SVProgressHUD.framework */,
+				FEA4F078232A4FBA0006C610 /* VisualRecognitionV3.framework */,
 				FEA4F065232A487B0006C610 /* SeeFood-IBM */,
 				FEA4F064232A487B0006C610 /* Products */,
 			);
@@ -74,6 +99,7 @@
 				FEA4F05F232A487B0006C610 /* Sources */,
 				FEA4F060232A487B0006C610 /* Frameworks */,
 				FEA4F061232A487B0006C610 /* Resources */,
+				FEA4F07E232A4FBA0006C610 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -284,7 +310,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3HY885L7L9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "SeeFood-IBM/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,7 +333,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3HY885L7L9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "SeeFood-IBM/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
