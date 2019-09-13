@@ -16,6 +16,8 @@
 		FEA4F07B232A4FBA0006C610 /* VisualRecognitionV3.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FEA4F078232A4FBA0006C610 /* VisualRecognitionV3.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FEA4F07C232A4FBA0006C610 /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEA4F079232A4FBA0006C610 /* SVProgressHUD.framework */; };
 		FEA4F07D232A4FBA0006C610 /* SVProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FEA4F079232A4FBA0006C610 /* SVProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FEA4F080232B93800006C610 /* RestKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEA4F07F232B93800006C610 /* RestKit.framework */; };
+		FEA4F081232B93800006C610 /* RestKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FEA4F07F232B93800006C610 /* RestKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,6 +29,7 @@
 			files = (
 				FEA4F07D232A4FBA0006C610 /* SVProgressHUD.framework in Embed Frameworks */,
 				FEA4F07B232A4FBA0006C610 /* VisualRecognitionV3.framework in Embed Frameworks */,
+				FEA4F081232B93800006C610 /* RestKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -43,6 +46,7 @@
 		FEA4F072232A487C0006C610 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FEA4F078232A4FBA0006C610 /* VisualRecognitionV3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VisualRecognitionV3.framework; path = Carthage/Build/iOS/VisualRecognitionV3.framework; sourceTree = "<group>"; };
 		FEA4F079232A4FBA0006C610 /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = "<group>"; };
+		FEA4F07F232B93800006C610 /* RestKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RestKit.framework; path = Carthage/Build/iOS/RestKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +56,7 @@
 			files = (
 				FEA4F07C232A4FBA0006C610 /* SVProgressHUD.framework in Frameworks */,
 				FEA4F07A232A4FBA0006C610 /* VisualRecognitionV3.framework in Frameworks */,
+				FEA4F080232B93800006C610 /* RestKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +66,7 @@
 		FEA4F05A232A487B0006C610 = {
 			isa = PBXGroup;
 			children = (
+				FEA4F07F232B93800006C610 /* RestKit.framework */,
 				FEA4F079232A4FBA0006C610 /* SVProgressHUD.framework */,
 				FEA4F078232A4FBA0006C610 /* VisualRecognitionV3.framework */,
 				FEA4F065232A487B0006C610 /* SeeFood-IBM */,
