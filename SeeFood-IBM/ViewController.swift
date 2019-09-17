@@ -15,7 +15,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var resultImageView: UIImageView!
     @IBOutlet weak var cameraBarButton: UIBarButtonItem!
     @IBOutlet weak var topBarImageView: UIImageView!
-    @IBOutlet weak var shareButton: UIButton!
     
     let imagePickerController = UIImagePickerController()
     
@@ -25,12 +24,9 @@ class ViewController: UIViewController {
     }
 
     @IBAction func cameraBarButtonAction(_ sender: UIBarButtonItem) {
-        imagePickerController.sourceType = .savedPhotosAlbum
+        imagePickerController.sourceType = .camera
         imagePickerController.allowsEditing = false
         present(imagePickerController, animated: true, completion: nil)
-    }
-    @IBAction func shareButtonAction(_ sender: UIButton) {
-        
     }
     
     private func recognize(image: UIImage) {
@@ -39,8 +35,10 @@ class ViewController: UIViewController {
         let imageData = image.jpegData(compressionQuality: 0.01)
         let visualRecognition = VisualRecognition(version: "2019-09-13", apiKey: "IcCmaYnegnt0xgsuFyOZWqLPvP5jqAiZ6FJ9KYaVLGA2")
         visualRecognition.classify(imagesFile: imageData) { classifiedImages, error in
+            
             let classes = classifiedImages?.result?.images.first?.classifiers.first?.classes ?? []
             let names = classes.map({ $0.className })
+            
             DispatchQueue.main.async {
                 SVProgressHUD.dismiss()
                 self.cameraBarButton.isEnabled = true
