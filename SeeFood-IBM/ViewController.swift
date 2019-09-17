@@ -8,14 +8,16 @@
 
 import UIKit
 import VisualRecognitionV3
+import SVProgressHUD
 
 class ViewController: UIViewController {
 
     @IBOutlet weak var resultImageView: UIImageView!
     @IBOutlet weak var cameraBarButton: UIBarButtonItem!
+    @IBOutlet weak var topBarImageView: UIImageView!
+    @IBOutlet weak var shareButton: UIButton!
     
     let imagePickerController = UIImagePickerController()
-    let visualRecognition = VisualRecognition(version: "2019-09-13", apiKey: "IcCmaYnegnt0xgsuFyOZWqLPvP5jqAiZ6FJ9KYaVLGA2")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,11 +29,34 @@ class ViewController: UIViewController {
         imagePickerController.allowsEditing = false
         present(imagePickerController, animated: true, completion: nil)
     }
+    @IBAction func shareButtonAction(_ sender: UIButton) {
+        
+    }
     
-    func recognize(image: UIImage) {
+    private func recognize(image: UIImage) {
+        SVProgressHUD.show()
+        cameraBarButton.isEnabled = false
         let imageData = image.jpegData(compressionQuality: 0.01)
+        let visualRecognition = VisualRecognition(version: "2019-09-13", apiKey: "IcCmaYnegnt0xgsuFyOZWqLPvP5jqAiZ6FJ9KYaVLGA2")
         visualRecognition.classify(imagesFile: imageData) { classifiedImages, error in
-            print(classifiedImages?.result)
+            let classes = classifiedImages?.result?.images.first?.classifiers.first?.classes ?? []
+            let names = classes.map({ $0.className })
+            DispatchQueue.main.async {
+                SVProgressHUD.dismiss()
+                self.cameraBarButton.isEnabled = true
+                
+                if names.contains("hotdog") {
+                    self.navigationItem.title = "Hotdog!"
+                    self.navigationController?.navigationBar.barTintColor = .green
+                    self.navigationController?.navigationBar.isTranslucent = false
+                    self.topBarImageView.image = UIImage(named: "hotdog")
+                } else {
+                    self.navigationItem.title = "Not a hotdog"
+                    self.navigationController?.navigationBar.barTintColor = .red
+                    self.navigationController?.navigationBar.isTranslucent = false
+                    self.topBarImageView.image = UIImage(named: "not-hotdog")
+                }
+            }
         }
     }
 }
